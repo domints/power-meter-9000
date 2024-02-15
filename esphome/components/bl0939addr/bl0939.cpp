@@ -105,9 +105,9 @@ void BL0939::setup() {
   waiting = false;
 
   // force 1.5 stop bits - works only on arduino esp32 backend
-  // esphome::uart::ESP32ArduinoUARTComponent* dev = reinterpret_cast<esphome::uart::ESP32ArduinoUARTComponent*>(this->parent_);
-  // auto serial = dev->get_hw_serial();
-  // serial->begin(4800, 134217772);
+   esphome::uart::ESP32ArduinoUARTComponent* dev = reinterpret_cast<esphome::uart::ESP32ArduinoUARTComponent*>(this->parent_);
+   auto serial = dev->get_hw_serial();
+   serial->begin(4800, 134217772);
 
   const uint8_t BL0939_INIT[6][6] = {
     // Reset to default
